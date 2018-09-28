@@ -1,47 +1,58 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import Wrapper from '../components/Layout'
+import { Layout, Menu, Icon } from 'antd';
+
+const { Header, Content, Footer, Sider } = Layout;
 
 export default class IndexPage extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    //const { data } = this.props
+    //const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-            </div>
-            {posts
-              .map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
-          </div>
-        </section>
-      </Layout>
+      <Wrapper>
+        <Layout>
+          <Sider
+            breakpoint="lg"
+            collapsedWidth="0"
+            onBreakpoint={(broken) => { console.log(broken); }}
+            onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+          >
+            <div className="logo" />
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+              <Menu.Item key="1">
+                <Icon type="user" />
+                <span className="nav-text">nav 1</span>
+              </Menu.Item>
+              <Menu.Item key="2">
+                <Icon type="video-camera" />
+                <span className="nav-text">nav 2</span>
+              </Menu.Item>
+              <Menu.Item key="3">
+                <Icon type="upload" />
+                <span className="nav-text">nav 3</span>
+              </Menu.Item>
+              <Menu.Item key="4">
+                <Icon type="user" />
+                <span className="nav-text">nav 4</span>
+              </Menu.Item>
+            </Menu>
+          </Sider>
+          <Layout>
+            <Header style={{ background: '#fff', padding: 0 }} />
+            <Content style={{ margin: '24px 16px 0' }}>
+              <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+                content
+        </div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>
+              Ant Design ©2018 Created by Ant UED
+      </Footer>
+          </Layout>
+        </Layout>
+      </Wrapper>
     )
   }
 }
@@ -56,24 +67,24 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+          allMarkdownRemark(
+            sort: {order: DESC, fields: [frontmatter___date] },
+      filter: {frontmatter: {templateKey: {eq: "blog-post" } }}
     ) {
-      edges {
+          edges {
         node {
           excerpt(pruneLength: 400)
-          id
+      id
           fields {
-            slug
-          }
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-          }
+          slug
         }
+        frontmatter {
+          title
+            templateKey
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
+}
+}
 `
