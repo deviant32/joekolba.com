@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { Link } from 'gatsby';
 
 
 import './main.scss'
@@ -41,12 +42,12 @@ const TemplateWrapper = ({ children }) => (
         </div>
         <div className="container">
           <div className="navbar-header d-flex align-items-center justify-content-between">
-            <a href="index.html" className="navbar-brand">Joe Kolba</a>
+            <Link className="navbar-brand" to="/">Joe Kolba</Link>
             <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" className="navbar-toggler"><span></span><span></span><span></span></button>
           </div>
           <div id="navbarcollapse" className="collapse navbar-collapse">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item"><a href="index.html" className="nav-link active ">Home</a>
+              <li className="nav-item"><Link className="nav-link" activeClassName="active" exact={true} to="/">Home</Link>
               </li>
               <li className="nav-item"><a href="blog.html" className="nav-link ">Blog</a>
               </li>
