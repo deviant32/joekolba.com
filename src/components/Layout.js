@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+
 import './main.scss'
 
 const TemplateWrapper = ({ children }) => (
@@ -20,8 +21,6 @@ const TemplateWrapper = ({ children }) => (
       <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet" />
       <link rel="stylesheet" href="css/custom.css" />
       <link rel="shortcut icon" href="favicon.png" />
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     </Helmet>
     <header className="header">
       <nav className="navbar navbar-expand-lg">
@@ -56,13 +55,71 @@ const TemplateWrapper = ({ children }) => (
               <li className="nav-item"><a href="#" className="nav-link ">Contact</a>
               </li>
             </ul>
-            <div className="navbar-text"><a href="#" className="search-btn"><i className="icon-search-1"></i></a></div>
-            <ul className="langs navbar-text"><a href="#" className="active">EN</a><span>           </span><a href="#">ES</a></ul>
+            {/* <div className="navbar-text"><a href="#" className="search-btn"><i className="icon-search-1"></i></a></div> */}
           </div>
         </div>
       </nav>
     </header>
     {children}
+    <footer className="main-footer">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="logo">
+              <h6 className="text-white">Joe Kolba</h6>
+            </div>
+            <div className="contact-details">
+              <p>Binghamton, NY 13905</p>
+              <p>Email: <a href="mailto:info@company.com">Info@Company.com</a></p>
+              <ul className="social-menu">
+                <li className="list-inline-item"><a href="#"><i className="fa fa-linkedin"></i></a></li>
+                <li className="list-inline-item"><a href="#"><i className="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="menus d-flex">
+              <ul className="list-unstyled">
+                <li> <a href="#">My Account</a></li>
+                <li> <a href="#">Add Listing</a></li>
+                <li> <a href="#">Pricing</a></li>
+                <li> <a href="#">Privacy &amp; Policy</a></li>
+              </ul>
+              <ul className="list-unstyled">
+                <li> <a href="#">Our Partners</a></li>
+                <li> <a href="#">FAQ</a></li>
+                <li> <a href="#">How It Works</a></li>
+                <li> <a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="latest-posts"><a href="#">
+              <div className="post d-flex align-items-center">
+                <div className="image"><img src="img/small-thumbnail-1.jpg" alt="..." className="img-fluid" /></div>
+                <div className="title"><strong>Hotels for all budgets</strong><span className="date last-meta">October 26, 2016</span></div>
+              </div></a><a href="#">
+                <div className="post d-flex align-items-center">
+                  <div className="image"><img src="img/small-thumbnail-2.jpg" alt="..." className="img-fluid" /></div>
+                  <div className="title"><strong>Great street atrs in London</strong><span className="date last-meta">October 26, 2016</span></div>
+                </div></a><a href="#">
+                <div className="post d-flex align-items-center">
+                  <div className="image"><img src="img/small-thumbnail-3.jpg" alt="..." className="img-fluid" /></div>
+                  <div className="title"><strong>Best coffee shops in Sydney</strong><span className="date last-meta">October 26, 2016</span></div>
+                </div></a></div>
+          </div>
+        </div>
+      </div>
+      <div className="copyrights">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <p>&copy; {new Date().getFullYear()} All rights reserved.  &nbsp;JoeKolba.com.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 )
 

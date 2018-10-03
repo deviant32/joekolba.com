@@ -767,7 +767,7 @@ section.featured-posts .comments::after {
 }
 
 section.featured-posts .image {
-    max-height: 200px;
+    max-height: 350px;
     width: auto;
     overflow: hidden;
     padding: 0;
