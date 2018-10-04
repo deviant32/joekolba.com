@@ -114,8 +114,11 @@ const TemplateWrapper = ({ children }) => (
       <div className="copyrights">
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-6">
               <p>&copy; {new Date().getFullYear()} All rights reserved.  &nbsp;JoeKolba.com.</p>
+            </div>
+            <div className="col-md-6 text-right">
+              <p>Powered by <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a> and <a href="http://www.netlify.com" target="_blank">Netlify</a></p>
             </div>
           </div>
         </div>
