@@ -141,7 +141,7 @@ export default class IndexPage extends React.Component {
         </section>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h3>Contact Me</h3>
-          <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" netlify>
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <hr />
             <div class="controls">
               <div class="row">
@@ -165,6 +165,7 @@ export default class IndexPage extends React.Component {
                   <p class="hidden" style={{ display: 'none' }}>
                     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
                   </p>
+                  <input type="hidden" name="form-name" value="contact-form" />
                   <input type="submit" class="btn btn-primary btn-send" value="Send message" />
                 </div>
               </div>
