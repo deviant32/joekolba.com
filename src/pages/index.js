@@ -164,7 +164,7 @@ export default class IndexPage extends React.Component {
         </section>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h3>Contact Me</h3>
-          <form id="contact-form" onSubmit={this.handleSubmit} data-netlify="true">
+          <form id="contact-form" name="contact" action="" data-netlify="true">
             <hr />
             <div class="controls">
               <div class="row">
@@ -185,7 +185,7 @@ export default class IndexPage extends React.Component {
                   </div>
                 </div>
                 <div class="col-md-12">
-                  <input type="hidden" name="form-name" value="contact-form" />
+                  <input type="hidden" name="form-name" value="contact" />
                   <input type="submit" class="btn btn-primary btn-send" value="Send message" />
                 </div>
               </div>
