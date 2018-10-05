@@ -34,7 +34,13 @@ export default class IndexPage extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => alert("Success!"))
+      .then(() => {
+        this.setState({ showThankYou: true });
+        setTimeout(() => {
+          this.setState({ 'open': false });
+          this.setState({ showThankYou: false });
+        }, 2500);
+      })
       .catch(error => alert(error));
 
     e.preventDefault();
@@ -164,29 +170,36 @@ export default class IndexPage extends React.Component {
           <h3>Contact Me</h3>
           <form id="contact" onSubmit={this.handleSubmit} data-netlify="true">
             <hr />
-            <div class="controls">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
+            <div className="controls">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="form-group">
                     <label for="form_email">Email</label>
-                    <input id="form_email" type="email" name="email" value={email} onChange={this.handleChange} class="form-control" required="required" data-error="Valid email is required." autofocus />
-                    <div class="help-block with-errors"></div>
+                    <input id="form_email" type="email" name="email" value={email} onChange={this.handleChange} className="form-control" required="required" data-error="Valid email is required." autofocus />
+                    <div className="help-block with-errors"></div>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="form-group">
                     <label for="form_message">Message</label>
-                    <textarea id="form_message" name="message" value={message} onChange={this.handleChange} class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
+                    <textarea id="form_message" name="message" value={message} onChange={this.handleChange} className="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div className="help-block with-errors"></div>
                   </div>
                 </div>
-                <div class="col-md-12">
+                <div className="col-md-12">
                   <input type="hidden" name="form-name" value="contact" />
-                  <input type="submit" class="btn btn-primary btn-send" value="Send message" />
+                  <input type="submit" className="btn btn-primary btn-send" value="Send message" />
                 </div>
               </div>
+              {this.state.showThankYou ?
+                <div className="row">
+                  <div className="col-xs-12 text-center" style={{ width: '100%' }}>
+                    <h6 className="text-center" style={{ marginTop: '20px', width: '100%', textAlign: 'center' }}>Your message has been sent.</h6>
+                  </div>
+                </div>
+                : null}
             </div>
           </form>
         </Modal>

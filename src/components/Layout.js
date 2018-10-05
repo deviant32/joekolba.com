@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby';
 
-
 import './main.scss'
 
 const TemplateWrapper = ({ children }) => (
