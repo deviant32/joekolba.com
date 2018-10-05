@@ -7,11 +7,18 @@ import Modal from 'react-responsive-modal';
 
 var ReactRotatingText = require('react-rotating-text');
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default class IndexPage extends React.Component {
 
-  state = {
-    open: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = { email: "", message: "", open: false };
+  }
 
   onOpenModal = () => {
     this.setState({ open: true });
@@ -21,10 +28,26 @@ export default class IndexPage extends React.Component {
     this.setState({ open: false });
   };
 
+  handleSubmit = e => {
+
+    console.log(this.state);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    const { open } = this.state;
+    const { open, message, email } = this.state;
 
     return (
       <Wrapper>
@@ -141,14 +164,14 @@ export default class IndexPage extends React.Component {
         </section>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h3>Contact Me</h3>
-          <form id="contact-form" name="contact" method="POST" data-netlify="true" action="/">
+          <form id="contact-form" onSubmit={this.handleSubmit}>
             <hr />
             <div class="controls">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="form_email">Email</label>
-                    <input id="form_email" type="email" name="email" class="form-control" required="required" data-error="Valid email is required." autofocus />
+                    <input id="form_email" type="email" name="email" value={email} onChange={this.handleChange} class="form-control" required="required" data-error="Valid email is required." autofocus />
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -157,7 +180,7 @@ export default class IndexPage extends React.Component {
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="form_message">Message</label>
-                    <textarea id="form_message" name="message" class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <textarea id="form_message" name="message" value={message} onChange={this.handleChange} class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
