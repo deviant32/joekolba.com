@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => (
       <link rel="stylesheet" href="css/fontastic.css" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
       <link rel="stylesheet" href="vendor/@fancyapps/fancybox/jquery.fancybox.min.css" />
-      <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet" />
+      <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet" />
       <link rel="stylesheet" href="css/custom.css" />
       <link rel="shortcut icon" href="favicon.png" />
     </Helmet>
