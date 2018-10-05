@@ -7,6 +7,12 @@ import Modal from 'react-responsive-modal';
 
 var ReactRotatingText = require('react-rotating-text');
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default class IndexPage extends React.Component {
 
   constructor(props) {
@@ -23,11 +29,10 @@ export default class IndexPage extends React.Component {
   };
 
   handleSubmit = e => {
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", data })
+      body: encode({ "form-name": "contact", ...this.state })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
