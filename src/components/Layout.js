@@ -7,11 +7,10 @@ import './main.scss'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS">
+    <Helmet title="Home | Joe Kolba - Full-Stack Software Engineer">
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <title>Bootstrap Blog - B4 Template by Bootstrap Temple</title>
-      <meta name="description" content="" />
+      ]      <meta name="description" content="" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="all,follow" />
       <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
