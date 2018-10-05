@@ -160,7 +160,7 @@ export default class IndexPage extends React.Component {
         </section>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h3>Contact Me</h3>
-          <form id="contact-form" onSubmit={this.handleSubmit} data-netlify="true">
+          <form id="contact" name="contact" onSubmit={this.handleSubmit} data-netlify="true">
             <hr />
             <div class="controls">
               <div class="row">
@@ -189,7 +189,7 @@ export default class IndexPage extends React.Component {
           </form>
         </Modal>
 
-        <form name="contact-form" netlify netlify-honeypot="bot-field" hidden>
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
           <input type="email" name="email" />
           <textarea name="message"></textarea>
           <input type="text" name="open" />
