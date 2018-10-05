@@ -164,7 +164,7 @@ export default class IndexPage extends React.Component {
         </section>
         <Modal open={open} onClose={this.onCloseModal} center>
           <h3>Contact Me</h3>
-          <form id="contact-form" name="contact" action="" data-netlify="true">
+          <form id="contact-form" name="contact" action="" data-netlify="true" netlify>
             <hr />
             <div class="controls">
               <div class="row">
