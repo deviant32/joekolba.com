@@ -31,7 +31,7 @@ export default class IndexPage extends React.Component {
   handleSubmit = e => {
 
     console.log(this.state);
-    fetch("/", {
+    fetch("/contact-form", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
