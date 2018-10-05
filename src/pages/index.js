@@ -1,13 +1,30 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import Wrapper from '../components/Layout'
+import Wrapper from '../components/Layout';
+import TimeAgo from 'react-timeago';
+import Modal from 'react-responsive-modal';
+
 var ReactRotatingText = require('react-rotating-text');
 
 export default class IndexPage extends React.Component {
+
+  state = {
+    open: false,
+  };
+
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+    const { open } = this.state;
 
     return (
       <Wrapper>
@@ -15,7 +32,6 @@ export default class IndexPage extends React.Component {
           <div className="container">
             <div className="row">
               <div className="image col-lg-3 text-center"><img style={{ maxWidth: '200px', marginBottom: '40px', objectFit: 'cover' }} src="img/joe-kolba-profile.jpg" alt="Joe Kolba" /></div>
-
               <div className="col-lg-8">
                 <h2 className="h3">Full-Stack Engineer</h2>
                 <p className="text-big">Hi, my name is <strong>Joe Kolba</strong> and I am a full-stack engineer.  My <strong>passion</strong> is <strong>technology</strong>, but I am an <strong>entrepreneur</strong> at heart.  I will be updating this site frequently with everything that I am currently working on or dreaming up.   </p>
@@ -29,7 +45,7 @@ export default class IndexPage extends React.Component {
               <div className="col-md-7">
                 <h2>Looking for a <ReactRotatingText items={['co-founder?', 'consultant?', 'engineer?']} deletingInterval={70} /></h2>
                 <p>I love hearing about new ideas.  Feel free to reach out to me to talk. With over 10 years of experience building enterprise solutions I have the experience and knowledge.</p>
-                <a href="#" className="hero-link">Contact me</a>
+                <a onClick={this.onOpenModal} className="hero-link">Contact me</a>
               </div>
             </div>
           </div>
@@ -49,13 +65,13 @@ export default class IndexPage extends React.Component {
                       </header>
                       <p>{post.excerpt}</p>
                       <footer className="post-footer d-flex align-items-center">
-                        <div className="date"><i className="icon-clock"></i> 2 months ago</div>
+                        <div className="date"><i className="icon-clock"></i> <TimeAgo date={post.frontmatter.date} /></div>
                         <div className="comments"><i className="icon-comment"></i>12</div>
                       </footer>
                     </div>
                   </div>
                 </div>
-                <div className={"image col-lg-5 " + (i % 2 === 0 ? 'order-first' : 'order-last')} ><img src="img/featured-pic-1.jpeg" alt="..." /></div>
+                <div className={"image col-lg-5 " + (i % 2 === 0 ? 'order-first' : 'order-last')} ><img src={post.frontmatter.image} alt="..." /></div>
               </div>
             )}
           </div>
@@ -103,26 +119,6 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </section>
-        {/* <section className="newsletter no-padding-top">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <h2>Subscribe to Newsletter</h2>
-                <p className="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div className="col-md-8">
-                <div className="form-holder">
-                  <form action="#">
-                    <div className="form-group">
-                      <input type="email" name="email" id="email" placeholder="Type your email address" />
-                      <button type="submit" className="submit">Subscribe</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
         <section className="gallery no-padding">
           <div className="row">
             <div className="mix col-lg-3 col-md-3 col-sm-6">
@@ -143,7 +139,39 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </section>
-      </Wrapper >
+        <Modal open={open} onClose={this.onCloseModal} center>
+          <h3>Contact Me</h3>
+          <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field">
+            <hr />
+            <div class="controls">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="form_email">Email</label>
+                    <input id="form_email" type="email" name="email" class="form-control" required="required" data-error="Valid email is required." autofocus />
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="form_message">Message</label>
+                    <textarea id="form_message" name="message" class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <p class="hidden" style={{ display: 'none' }}>
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                  </p>
+                  <input type="submit" class="btn btn-primary btn-send" value="Send message" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </Modal>
+      </Wrapper>
     )
   }
 }
@@ -172,6 +200,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
+            image
             date(formatString: "MMMM DD, YYYY")
           }
         }

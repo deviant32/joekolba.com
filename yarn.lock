@@ -3114,7 +3114,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.1.2:
+classnames@^2.1.2, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -8695,7 +8695,7 @@ longest@^1.0.0:
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
   integrity sha1-MKCy2jj3N3DoKUoNIuZiXtd9AJc=
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -9593,6 +9593,11 @@ no-case@^2.2.0:
   integrity sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==
   dependencies:
     lower-case "^1.1.1"
+
+no-scroll@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/no-scroll/-/no-scroll-2.1.1.tgz#f37e08cb159b75a5bdbfc0a87cd9223e120e6e27"
+  integrity sha512-YTzGAJOo/B6hkodeT5SKKHpOhAzjMfkUCCXjLJwjWk2F4/InIg+HbdH9kmT7bKpleDuqLZDTRy2OdNtAj0IVyQ==
 
 node-abi@^2.2.0:
   version "2.4.4"
@@ -11725,6 +11730,13 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-minimalist-portal@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-minimalist-portal/-/react-minimalist-portal-2.3.1.tgz#4853e3f48a74a32c1b8767601887cdf7941eeba3"
+  integrity sha1-SFPj9Ip0oywbh2dgGIfN95Qe66M=
+  dependencies:
+    prop-types "^15.6.1"
+
 react-modal@^3.1.5:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.5.1.tgz#33d38527def90ea324848f7d63e53acc4468a451"
@@ -11758,6 +11770,18 @@ react-redux@^4.0.0, react-redux@^4.4.0:
     lodash "^4.2.0"
     loose-envify "^1.1.0"
     prop-types "^15.5.4"
+
+react-responsive-modal@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-3.4.0.tgz#8aa3fa39d8e2e054fbc66e895460f773c9f598b1"
+  integrity sha512-GxHa2UfHsm3qWL2yNE5+1j+T0nqF8zC9TWjEk722Jq+dQ9RAgD1pCnlqqBhPw0gTiqg/YBKfhynx/qSuHp6L4w==
+  dependencies:
+    classnames "^2.2.6"
+    no-scroll "^2.1.1"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
+    react-minimalist-portal "^2.3.1"
+    react-transition-group "^2.4.0"
 
 react-rotating-text@^1.2.1:
   version "1.2.1"
@@ -11855,6 +11879,11 @@ react-themeable@^1.1.0:
   dependencies:
     object-assign "^3.0.0"
 
+react-timeago@^4.1.9:
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/react-timeago/-/react-timeago-4.1.9.tgz#a5dee4ac072299a9a5ca5a61f56177a80f83c1fb"
+  integrity sha512-MKucv9nU65BOPqIrClAFxqvpGCC4RdRpqp0P1YIb7C3yT6TQVdcoOlr0k4TDHvLQhbkwd3nbTxiDQMa3iDlZxg==
+
 react-toggled@^1.1.2:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/react-toggled/-/react-toggled-1.2.7.tgz#be1b72058358dd1ffe11811e4427e5c9cf140c10"
@@ -11885,6 +11914,16 @@ react-transition-group@^2.2.1:
   dependencies:
     dom-helpers "^3.3.1"
     loose-envify "^1.3.1"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
+
+react-transition-group@^2.4.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.5.0.tgz#70bca0e3546102c4dc5cf3f5f57f73447cce6874"
+  integrity sha512-qYB3JBF+9Y4sE4/Mg/9O6WFpdoYjeeYqx0AFb64PTazVy8RPMiE3A47CG9QmM4WJ/mzDiZYslV+Uly6O1Erlgw==
+  dependencies:
+    dom-helpers "^3.3.1"
+    loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
