@@ -178,7 +178,7 @@ export default class IndexPage extends React.Component {
                   </div>
                 </div>
                 <div class="col-md-12">
-                  <input type="hidden" name="form-name" value="contact-form" />
+                  <input type="hidden" name="form-name" value="contact" />
                   <input type="submit" class="btn btn-primary btn-send" value="Send message" />
                 </div>
               </div>
