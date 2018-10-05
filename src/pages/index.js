@@ -186,7 +186,7 @@ export default class IndexPage extends React.Component {
           </form>
         </Modal>
 
-        <form name="contact" netlify netlify-honeypot="bot-field">
+        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
           <input type="email" name="email" />
           <textarea name="message"></textarea>
           <input type="text" name="open" />
