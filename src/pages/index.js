@@ -58,10 +58,12 @@ export default class IndexPage extends React.Component {
         <section className="intro">
           <div className="container">
             <div className="row">
-              <div className="image col-lg-3 text-center"><img style={{ maxWidth: '200px', marginBottom: '40px', objectFit: 'cover' }} src="img/joe-kolba-profile.jpg" alt="Joe Kolba" /></div>
+              <div className="image col-lg-3 text-center">
+                <img style={{ maxWidth: '200px', marginBottom: '40px', objectFit: 'cover' }} src="img/joe-kolba-profile.jpg" alt="Joe Kolba" /></div>
               <div className="col-lg-8">
                 <h2 className="h3">Full-Stack Engineer</h2>
-                <p className="text-big">Hi, my name is <strong>Joe Kolba</strong> and I am a full-stack engineer.  My <strong>passion</strong> is <strong>technology</strong>, but I am an <strong>entrepreneur</strong> at heart.  I will be updating this site frequently with everything that I am currently working on or dreaming up.   </p>
+                <p className="text-big">Hi, my name is <strong>Joe Kolba</strong> and I am a full-stack engineer.
+                My <strong>passion</strong> is <strong>technology</strong>, but I am an <strong>entrepreneur</strong> at heart.  I will be updating this site frequently with everything that I am currently working on or dreaming up.</p>
               </div>
             </div>
           </div>
@@ -85,7 +87,7 @@ export default class IndexPage extends React.Component {
                   <div className="text-inner d-flex align-items-center">
                     <div className="content">
                       <header className="post-header">
-                        <div className="category"><a href="#">Business</a><a href="#">Technology</a></div><a href="post.html">
+                        <div className="category">{post.frontmatter.category}</div><a href="post.html">
                           <h2 className="h4"><Link className="has-text-primary" to={post.fields.slug}>
                             {post.frontmatter.title}
                           </Link></h2></a>
@@ -98,7 +100,9 @@ export default class IndexPage extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className={"image col-lg-5 " + (i % 2 === 0 ? 'order-first' : 'order-last')} ><img src={post.frontmatter.image} alt="..." /></div>
+                <div className={"image col-lg-5 " + (i % 2 === 0 ? 'order-first' : 'order-last')} >
+                  <img src={post.frontmatter.image} alt="..." />
+                </div>
               </div>
             )}
           </div>
@@ -106,12 +110,13 @@ export default class IndexPage extends React.Component {
         <section className="latest-posts">
           <div className="container">
             <header>
-              <h2>Latest from the blog</h2>
-              <p className="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <h2>Technology News</h2>
             </header>
             <div className="row">
               <div className="post col-md-4">
-                <div className="post-thumbnail"><a href="post.html"><img src="img/blog-1.jpg" alt="..." className="img-fluid" /></a></div>
+                <div className="post-thumbnail">
+                  <a href="post.html"><img src="img/blog-1.jpg" alt="..." className="img-fluid" /></a>
+                </div>
                 <div className="post-details">
                   <div className="post-meta d-flex justify-content-between">
                     <div className="date">20 May | 2016</div>
@@ -122,24 +127,34 @@ export default class IndexPage extends React.Component {
                 </div>
               </div>
               <div className="post col-md-4">
-                <div className="post-thumbnail"><a href="post.html"><img src="img/blog-2.jpg" alt="..." className="img-fluid" /></a></div>
+                <div className="post-thumbnail">
+                  <a href="post.html"><img src="img/blog-2.jpg" alt="..." className="img-fluid" /></a>
+                </div>
                 <div className="post-details">
                   <div className="post-meta d-flex justify-content-between">
                     <div className="date">20 May | 2016</div>
                     <div className="category"><a href="#">Technology</a></div>
-                  </div><a href="post.html">
-                    <h3 className="h4">Diversity in Engineering: Effect on Questions</h3></a>
+                  </div>
+                  <a href="post.html">
+                    <h3 className="h4">Diversity in Engineering: Effect on Questions</h3>
+                  </a>
                   <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
               </div>
               <div className="post col-md-4">
-                <div className="post-thumbnail"><a href="post.html"><img src="img/blog-3.jpg" alt="..." className="img-fluid" /></a></div>
+                <div className="post-thumbnail">
+                  <a href="post.html">
+                    <img src="img/blog-3.jpg" alt="..." className="img-fluid" />
+                  </a>
+                </div>
                 <div className="post-details">
                   <div className="post-meta d-flex justify-content-between">
                     <div className="date">20 May | 2016</div>
                     <div className="category"><a href="#">Financial</a></div>
-                  </div><a href="post.html">
-                    <h3 className="h4">Alberto Savoia Can Teach You About Interior</h3></a>
+                  </div>
+                  <a href="post.html">
+                    <h3 className="h4">Alberto Savoia Can Teach You About Interior</h3>
+                  </a>
                   <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
               </div>
@@ -149,20 +164,34 @@ export default class IndexPage extends React.Component {
         <section className="gallery no-padding">
           <div className="row">
             <div className="mix col-lg-3 col-md-3 col-sm-6">
-              <div className="item"><a href="img/gallery-1.jpg" data-fancybox="gallery" className="image"><img src="img/gallery-1.jpg" alt="..." className="img-fluid" />
-                <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i></div></a></div>
+              <div className="item">
+                <a href="img/gallery-1.jpg" data-fancybox="gallery" className="image">
+                  <img src="img/gallery-1.jpg" alt="..." className="img-fluid" />
+                  <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i>
+                  </div>
+                </a>
+              </div>
             </div>
             <div className="mix col-lg-3 col-md-3 col-sm-6">
               <div className="item"><a href="img/gallery-2.jpg" data-fancybox="gallery" className="image"><img src="img/gallery-2.jpg" alt="..." className="img-fluid" />
                 <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i></div></a></div>
             </div>
             <div className="mix col-lg-3 col-md-3 col-sm-6">
-              <div className="item"><a href="img/gallery-3.jpg" data-fancybox="gallery" className="image"><img src="img/gallery-3.jpg" alt="..." className="img-fluid" />
-                <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i></div></a></div>
+              <div className="item">
+                <a href="img/gallery-3.jpg" data-fancybox="gallery" className="image">
+                  <img src="img/gallery-3.jpg" alt="..." className="img-fluid" />
+                  <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i>
+                  </div>
+                </a>
+              </div>
             </div>
             <div className="mix col-lg-3 col-md-3 col-sm-6">
-              <div className="item"><a href="img/gallery-4.jpg" data-fancybox="gallery" className="image"><img src="img/gallery-4.jpg" alt="..." className="img-fluid" />
-                <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i></div></a></div>
+              <div className="item">
+                <a href="img/gallery-4.jpg" data-fancybox="gallery" className="image">
+                  <img src="img/gallery-4.jpg" alt="..." className="img-fluid" />
+                  <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i></div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -175,7 +204,8 @@ export default class IndexPage extends React.Component {
                 <div className="col-md-12">
                   <div className="form-group">
                     <label for="form_email">Email</label>
-                    <input id="form_email" type="email" name="email" value={email} onChange={this.handleChange} className="form-control" required="required" data-error="Valid email is required." autofocus />
+                    <input id="form_email" type="email" name="email" value={email} onChange={this.handleChange}
+                      className="form-control" required="required" data-error="Valid email is required." autofocus />
                     <div className="help-block with-errors"></div>
                   </div>
                 </div>
@@ -184,7 +214,10 @@ export default class IndexPage extends React.Component {
                 <div className="col-md-12">
                   <div className="form-group">
                     <label for="form_message">Message</label>
-                    <textarea id="form_message" name="message" value={message} onChange={this.handleChange} className="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <textarea id="form_message" name="message"
+                      value={message}
+                      onChange={this.handleChange}
+                      className="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                     <div className="help-block with-errors"></div>
                   </div>
                 </div>
@@ -225,6 +258,7 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
   query IndexQuery {
         allMarkdownRemark(
+            limit: 2,
             sort: {order: DESC, fields: [frontmatter___date] },
             filter: {frontmatter: {templateKey: {eq: "blog-post" } }}
         ) {
