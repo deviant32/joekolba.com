@@ -1,10 +1,9 @@
 ---
 templateKey: blog-post
 image: /img/blog-3.jpg
-type: blog
 title: Test title...
 category: Java Development
-date: 2016-12-17T15:04:10.000Z
+date: 2018-10-09T14:04:10.000Z
 tags:
   - flavor
   - tasting
