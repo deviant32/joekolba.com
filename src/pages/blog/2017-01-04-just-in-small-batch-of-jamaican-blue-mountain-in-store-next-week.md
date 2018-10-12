@@ -1,7 +1,9 @@
 ---
 templateKey: blog-post
 image: /img/blog-1.jpg
+type: blog
 title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
+category: Java Development
 date: 2017-01-04T15:04:10.000Z
 tags:
   - jamaica
