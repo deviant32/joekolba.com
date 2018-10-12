@@ -45,7 +45,7 @@ const TemplateWrapper = ({ children }) => (
           </div>
           <div id="navbarcollapse" className="collapse navbar-collapse">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item"><Link className="nav-link" activeClassName="active" exact={true} to="/">Home</Link>
+              <li className="nav-item"><Link className="nav-link" activeClassName="active" exact={"true"} to="/">Home</Link>
               </li>
               <li className="nav-item"><a href="blog.html" className="nav-link ">Blog</a>
               </li>
@@ -116,7 +116,7 @@ const TemplateWrapper = ({ children }) => (
               <p>&copy; {new Date().getFullYear()} All rights reserved.  &nbsp;JoeKolba.com.</p>
             </div>
             <div className="col-md-6 text-right">
-              <p>Powered by <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a> and <a href="http://www.netlify.com" target="_blank">Netlify</a></p>
+              <p>Powered by <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby.js</a> and <a href="http://www.netlify.com" target="_blank" rel="noopener noreferrer">Netlify</a></p>
             </div>
           </div>
         </div>

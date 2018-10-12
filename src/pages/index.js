@@ -49,8 +49,10 @@ export default class IndexPage extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
+
     const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { edges: blog } = data.blogData;
+    const { edges: news } = data.newsData;
     const { open, message, email } = this.state;
 
     return (
@@ -81,21 +83,20 @@ export default class IndexPage extends React.Component {
         </section>
         <section className="featured-posts no-padding-bottom">
           <div className="container">
-            {posts.map(({ node: post }, i) =>
-              <div className="row d-flex align-items-stretch">
+            {blog.map(({ node: post }, i) =>
+              <div className="row d-flex align-items-stretch" key={post.id}>
                 <div className="text col-lg-7">
                   <div className="text-inner d-flex align-items-center">
                     <div className="content">
                       <header className="post-header">
-                        <div className="category">{post.frontmatter.category}</div><a href="post.html">
+                        <div className="category">{post.frontmatter.category}</div>
                           <h2 className="h4"><Link className="has-text-primary" to={post.fields.slug}>
                             {post.frontmatter.title}
-                          </Link></h2></a>
+                          </Link></h2>
                       </header>
                       <p>{post.excerpt}</p>
                       <footer className="post-footer d-flex align-items-center">
                         <div className="date"><i className="icon-clock"></i> <TimeAgo date={post.frontmatter.date} /></div>
-                        <div className="comments"><i className="icon-comment"></i>12</div>
                       </footer>
                     </div>
                   </div>
@@ -113,51 +114,27 @@ export default class IndexPage extends React.Component {
               <h2>Technology News</h2>
             </header>
             <div className="row">
-              <div className="post col-md-4">
-                <div className="post-thumbnail">
-                  <a href="post.html"><img src="img/blog-1.jpg" alt="..." className="img-fluid" /></a>
-                </div>
-                <div className="post-details">
-                  <div className="post-meta d-flex justify-content-between">
-                    <div className="date">20 May | 2016</div>
-                    <div className="category"><a href="#">Business</a></div>
-                  </div><a href="post.html">
-                    <h3 className="h4">Ways to remember your important ideas</h3></a>
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-              </div>
-              <div className="post col-md-4">
-                <div className="post-thumbnail">
-                  <a href="post.html"><img src="img/blog-2.jpg" alt="..." className="img-fluid" /></a>
-                </div>
-                <div className="post-details">
-                  <div className="post-meta d-flex justify-content-between">
-                    <div className="date">20 May | 2016</div>
-                    <div className="category"><a href="#">Technology</a></div>
+
+              {news.map(({ node: post }, i) =>
+                <div className="post col-md-4" key={post.id}>
+                  <div className="post-thumbnail">
+                    <Link className="has-text-primary" to={post.fields.slug}>
+                      <img src={post.frontmatter.image} alt={post.frontmatter.title} className="img-fluid" />
+                    </Link>
+                    </div>
+                    <div className="post-details">
+                      <div className="post-meta d-flex justify-content-between">
+                        <div className="date"><TimeAgo date={post.frontmatter.date} /></div>
+                        <div className="category">{post.frontmatter.category}</div>
+                      </div>
+                      <Link className="has-text-primary" to={post.fields.slug}>
+                        <h3 className="h4">{post.frontmatter.title}</h3>
+                      </Link>
+                      <p className="text-muted">{post.exerpt}</p>
                   </div>
-                  <a href="post.html">
-                    <h3 className="h4">Diversity in Engineering: Effect on Questions</h3>
-                  </a>
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 </div>
-              </div>
-              <div className="post col-md-4">
-                <div className="post-thumbnail">
-                  <a href="post.html">
-                    <img src="img/blog-3.jpg" alt="..." className="img-fluid" />
-                  </a>
-                </div>
-                <div className="post-details">
-                  <div className="post-meta d-flex justify-content-between">
-                    <div className="date">20 May | 2016</div>
-                    <div className="category"><a href="#">Financial</a></div>
-                  </div>
-                  <a href="post.html">
-                    <h3 className="h4">Alberto Savoia Can Teach You About Interior</h3>
-                  </a>
-                  <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-              </div>
+              )}
+            
             </div>
           </div>
         </section>
@@ -167,20 +144,28 @@ export default class IndexPage extends React.Component {
               <div className="item">
                 <a href="img/gallery-1.jpg" data-fancybox="gallery" className="image">
                   <img src="img/gallery-1.jpg" alt="..." className="img-fluid" />
-                  <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i>
+                  <div className="overlay d-flex align-items-center justify-content-center">
+                  <i className="icon-search"></i>
                   </div>
                 </a>
               </div>
             </div>
             <div className="mix col-lg-3 col-md-3 col-sm-6">
-              <div className="item"><a href="img/gallery-2.jpg" data-fancybox="gallery" className="image"><img src="img/gallery-2.jpg" alt="..." className="img-fluid" />
-                <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i></div></a></div>
+              <div className="item">
+                <a href="img/gallery-2.jpg" data-fancybox="gallery" className="image">
+                  <img src="img/gallery-2.jpg" alt="..." className="img-fluid" />
+                  <div className="overlay d-flex align-items-center justify-content-center">
+                    <i className="icon-search"></i>
+                  </div>
+                  </a>
+                </div>
             </div>
             <div className="mix col-lg-3 col-md-3 col-sm-6">
               <div className="item">
                 <a href="img/gallery-3.jpg" data-fancybox="gallery" className="image">
                   <img src="img/gallery-3.jpg" alt="..." className="img-fluid" />
-                  <div className="overlay d-flex align-items-center justify-content-center"><i className="icon-search"></i>
+                  <div className="overlay d-flex align-items-center justify-content-center">
+                    <i className="icon-search"></i>
                   </div>
                 </a>
               </div>
@@ -237,7 +222,7 @@ export default class IndexPage extends React.Component {
           </form>
         </Modal>
 
-        <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <form name="contact" netlify="true" netlify-honeypot="bot-field" hidden>
           <input type="email" name="email" />
           <textarea name="message"></textarea>
           <input type="text" name="open" />
@@ -257,8 +242,30 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-        allMarkdownRemark(
-            limit: 2,
+        newsData: allMarkdownRemark(
+          limit: 3,
+          sort: {order: DESC, fields: [frontmatter___date] },
+          filter: {frontmatter: {templateKey: {eq: "news-post" } } }
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 200),
+              fields {
+                slug
+              }
+              frontmatter {
+                title,
+                templateKey,
+                category,
+                image,
+                date(formatString: "MMMM DD, YYYY")
+              }
+            }
+          }
+        }
+
+        blogData: allMarkdownRemark(
+            limit: 3,
             sort: {order: DESC, fields: [frontmatter___date] },
             filter: {frontmatter: {templateKey: {eq: "blog-post" } }}
         ) {
@@ -270,6 +277,7 @@ export const pageQuery = graphql`
               slug
             }
           frontmatter {
+            category
             title
             templateKey
             image

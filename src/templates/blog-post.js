@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
@@ -12,7 +11,7 @@ export const BlogPostTemplate = ({
   content,
   image,
   contentComponent,
-  tags,
+  category,
   title,
   date,
   helmet,
@@ -21,16 +20,18 @@ export const BlogPostTemplate = ({
 
   return (
 
-
     <div class="container">
       {helmet || ''}
-      <div class="row">
-        <main className="post blog-post col-lg-8">
+      <div className="row">
+        <main className="post blog-post col-lg-12">
           <div className="container">
             <div className="post-single">
+              <div className="text-center">
+                <img src={image} style={{maxHeight: '300px'}}  className="img-fluid" alt={title} />
+              </div>
               <div className="post-details">
                 <div className="post-meta d-flex justify-content-between">
-                  <div className="category"><a href="#">Business</a><a href="#">Financial</a></div>
+                  <div className="category">{category}</div>
                 </div>
                 <h1>{title}</h1>
                 <div className="post-footer d-flex align-items-center flex-column flex-sm-row">
@@ -125,39 +126,7 @@ export const BlogPostTemplate = ({
               </div>
             </form>
           </div> */}
-          <div className="widget latest-posts">
-            <header>
-              <h3 className="h6">Latest Posts</h3>
-            </header>
-            <div className="blog-posts"><a href="#">
-              <div className="item d-flex align-items-center">
-                <div className="image"><img src="img/small-thumbnail-1.jpg" alt="..." className="img-fluid" /></div>
-                <div className="title"><strong>Alberto Savoia Can Teach You About</strong>
-                  <div className="d-flex align-items-center">
-                    <div className="views"><i className="icon-eye"></i> 500</div>
-                    <div className="comments"><i className="icon-comment"></i>12</div>
-                  </div>
-                </div>
-              </div></a><a href="#">
-                <div className="item d-flex align-items-center">
-                  <div className="image"><img src="img/small-thumbnail-2.jpg" alt="..." className="img-fluid" /></div>
-                  <div className="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div className="d-flex align-items-center">
-                      <div className="views"><i className="icon-eye"></i> 500</div>
-                      <div className="comments"><i className="icon-comment"></i>12</div>
-                    </div>
-                  </div>
-                </div></a><a href="#">
-                <div className="item d-flex align-items-center">
-                  <div className="image"><img src="img/small-thumbnail-3.jpg" alt="..." className="img-fluid" /></div>
-                  <div className="title"><strong>Alberto Savoia Can Teach You About</strong>
-                    <div className="d-flex align-items-center">
-                      <div className="views"><i className="icon-eye"></i> 500</div>
-                      <div className="comments"><i className="icon-comment"></i>12</div>
-                    </div>
-                  </div>
-                </div></a></div>
-          </div>
+          {/* å */}
           {/* 
           <div className="widget categories">
             <header>
@@ -176,7 +145,7 @@ export const BlogPostTemplate = ({
             <ul className="list-inline">
               <li className="list-inline-item"><a href="#" className="tag">#Business</a></li>
               <li className="list-inline-item"><a href="#" className="tag">#Technology</a></li>
-              <li className="list-inline-item"><a href="#" className="tag">#Fashion</a></li>
+              <li className="list-inline-ißtem"><a href="#" className="tag">#Fashion</a></li>
               <li className="list-inline-item"><a href="#" className="tag">#Sports</a></li>
               <li className="list-inline-item"><a href="#" className="tag">#Economy</a></li>
             </ul>
@@ -191,6 +160,7 @@ export const BlogPostTemplate = ({
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
+  category: PropTypes.string,
   title: PropTypes.string,
   date: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
@@ -206,6 +176,7 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
+        category={post.frontmatter.category}
         title={post.frontmatter.title}
         image={post.frontmatter.image}
         date={post.frontmatter.date}
@@ -230,6 +201,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         image
+        category
         title
         tags
       }
