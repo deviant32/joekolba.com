@@ -1,6 +1,6 @@
 ---
 templateKey: news-post
-image: /img/blog-1.jpg
+image: /img/blockchain-facts.png
 title: >-
   Blockchain Is Rocking the World – Here Are Some of the Industries It Will
   Disrupt
