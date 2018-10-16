@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 image: /img/blog-3.jpg
-title: Test title...
+title: updated title
 category: Java Development
 date: 2018-10-09T14:04:10.000Z
 tags:
