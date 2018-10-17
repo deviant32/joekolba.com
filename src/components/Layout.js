@@ -9,7 +9,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet title="Home | Joe Kolba - Full-Stack Software Engineer">
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      ]      <meta name="description" content="" />
+      <meta name="description" content="" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="all,follow" />
       <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
@@ -47,11 +47,7 @@ const TemplateWrapper = ({ children }) => (
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><Link className="nav-link" activeClassName="active" exact={"true"} to="/">Home</Link>
               </li>
-              <li className="nav-item"><a href="blog.html" className="nav-link ">Blog</a>
-              </li>
               <li className="nav-item"><a href="post.html" className="nav-link ">Resume</a>
-              </li>
-              <li className="nav-item"><a href="#" className="nav-link ">Contact</a>
               </li>
             </ul>
             {/* <div className="navbar-text"><a href="#" className="search-btn"><i className="icon-search-1"></i></a></div> */}
