@@ -47,7 +47,7 @@ const TemplateWrapper = ({ children }) => (
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><Link className="nav-link" activeClassName="active" exact={"true"} to="/">Home</Link>
               </li>
-              <li className="nav-item"><a href="post.html" className="nav-link ">Resume</a>
+              <li className="nav-item"><Link className="nav-link" to="/resume">Resume</Link>
               </li>
             </ul>
             {/* <div className="navbar-text"><a href="#" className="search-btn"><i className="icon-search-1"></i></a></div> */}
