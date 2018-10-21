@@ -19,6 +19,13 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - name: "job"
+    label: "Job"
+    folder: "src/pages/job"
+    fields:
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+
 
   - name: "news"
     label: "News"
