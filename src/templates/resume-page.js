@@ -44,20 +44,5 @@ export const resumePageQuery = graphql`
         title
       }
     }
-
-    jobs: allMarkdownRemark(
-      sort: {order: DESC, fields: [frontmatter___date] },
-      filter: {frontmatter: {templateKey: {eq: "job" } }}
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            templateKey
-            title
-          }
-        }
-      }
-    }
   }
 `
