@@ -20,21 +20,6 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "job"
-    label: "Job"
-    folder: "src/pages/job"
-    create: false
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "job"}
-      - {label: "Company", name: "company", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Location", name: "location", widget: "string"}
-      - {label: "Time", name: "time", widget: "string"}
-      - {label: "Content", name: "content", widget: "markdown"}
-
-
-
   - name: "news"
     label: "News"
     folder: "src/pages/news"
@@ -52,6 +37,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -59,12 +45,14 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+
       - file: "src/pages/resume/index.md"
         label: "Resume"
         name: "resume"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resume-page"}
           - {label: "Title", name: "title", widget: "string"}
+
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
