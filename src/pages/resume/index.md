@@ -68,5 +68,17 @@ jobs:
     location: 'Rochester, NY'
     order: 5
     title: Software Developer
+  - business: 'CyberCity   '
+    dates: '2006'
+    description: >-
+      * Developed site content and graphics by coordinating with copywriters and
+      graphic artists; designing images, icons, banners, audio enhancements,
+      etc.
+
+      * Maintained site appearance by developing and enforcing content and
+      display standards.
+    location: 'Binghamton, NY'
+    order: 6
+    title: Web Developer
 ---
 Resume
