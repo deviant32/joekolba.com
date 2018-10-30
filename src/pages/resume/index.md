@@ -59,5 +59,14 @@ jobs:
     location: 'Binghamton, NY'
     order: 4
     title: Lead Software Engineer
+  - business: SportsAndLeisureMag.com
+    dates: '2008'
+    description: |-
+      * Designed, developed, and deployed company WordPress site.
+      * Modified existing code as needed.
+      * Assisted in website traffic and performance monitoring.
+    location: 'Rochester, NY'
+    order: 5
+    title: Software Developer
 ---
 Resume
