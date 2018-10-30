@@ -1,6 +1,6 @@
 ---
 templateKey: resume-page
-title: Resume
+title: Experience
 jobs:
   - business: Modern Marketing Concepts
     dates: Jan 2018 - Current
