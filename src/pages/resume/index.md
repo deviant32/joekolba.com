@@ -28,5 +28,21 @@ jobs:
     location: 'Boston, MA'
     order: 2
     title: Software Development Contractor
+  - business: LifeSIte
+    dates: January 2016 - October 2017
+    description: >-
+      * Developed patented security based architecture.
+
+      * Lead all development and architecture for a $5M dollar startup.
+
+      * Configured continuous deployment with jenkins and other build processes.
+
+      * Coordinated and adhered to a rapid release sprint cycle.
+
+      * Assisted with the interviewing, hiring, and training of software
+      developers.
+    location: 'San Jose, CA'
+    order: 3
+    title: Lead Software Engineer
 ---
 Resume
