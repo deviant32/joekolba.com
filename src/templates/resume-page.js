@@ -16,7 +16,6 @@ export const ResumePageTemplate = ({ title, content, contentComponent }) => {
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-              <PageContent className="content" content={content} />
             </div>
           </div>
         </div>
@@ -25,6 +24,7 @@ export const ResumePageTemplate = ({ title, content, contentComponent }) => {
   );
 };
 
+<<<<<<< HEAD
 ResumePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
@@ -33,27 +33,34 @@ ResumePageTemplate.propTypes = {
 
 const ResumePage = ({ data }) => {
   const { markdownRemark: post } = data;
+=======
+const ResumePage = ({ data }) => {
+  const page = data.page;
+>>>>>>> e9fdc42fdfa850d67fc5704f8323d62c2f364a5d
 
   return (
     <Layout>
       <ResumePageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        title={page.frontmatter.title}
       />
     </Layout>
   );
 };
 
+<<<<<<< HEAD
 ResumePage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
 export default ResumePage;
+=======
+export default ResumePage
+>>>>>>> e9fdc42fdfa850d67fc5704f8323d62c2f364a5d
 
 export const resumePageQuery = graphql`
   query ResumePage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+
+    page: markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
