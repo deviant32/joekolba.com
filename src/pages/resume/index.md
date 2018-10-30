@@ -44,5 +44,20 @@ jobs:
     location: 'San Jose, CA'
     order: 3
     title: Lead Software Engineer
+  - business: 'Security Mutual Life Insurance      '
+    dates: June 2009 - January 2016
+    description: >-
+      * Developed software solutions by studying information needs; conferring
+      with users; studying systems flow, data usage, and work processes;
+      investigating problem areas; following the software development lifecycle.
+
+      * Improved operations by conducting systems analysis; recommending changes
+      in policies and procedures.
+
+      * Obtained and licensed software by obtaining required information from
+      vendors; recommending purchases; testing and approving products.
+    location: 'Binghamton, NY'
+    order: 4
+    title: Lead Software Engineer
 ---
 Resume
