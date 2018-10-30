@@ -1,4 +1,5 @@
 ---
-templateKey: 'resume-page'
-title: About our values
+templateKey: resume-page
+title: Resume
 ---
+Resume
