@@ -81,4 +81,6 @@ jobs:
     order: 6
     title: Web Developer
 ---
-Resume
+<div class="resume-item d-flex flex-column flex-md-row mb-5"><div class="resume-content mr-auto"><h3 class="mb-0">System Architect / Research and Development</h3><div class="subheading mb-3">Modern Marketing Concepts</div><p>* Provides mentoring and guidance to employees. 
+*  Acts as an expert providing direction and guidance to process improvements and establishing policies.
+* Stays up to date with the latest technologies, techniques and best practices.</p></div><div class="resume-date text-md-right"><span class="text-primary">Jan 2018 - Current</span></div></div>
