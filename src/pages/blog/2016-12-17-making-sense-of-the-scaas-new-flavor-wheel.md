@@ -1,30 +1,43 @@
 ---
 templateKey: blog-post
-image: /img/blog-3.jpg
-title: updated title
-category: Java Development
-date: 2018-10-09T14:04:10.000Z
+image: >-
+  /img/magento-vs-shopify-which-is-the-best-platform-for-your-ecommerce-business.jpg
+title: Magento vs Shopify
+category: Ecommerce
+date: 2018-11-12T15:04:10.000Z
 tags:
-  - flavor
-  - tasting
+  - magento
+  - shopify
+  - ecommerce
 ---
-The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
+Recently I had to a request from a client to make an e-commerce site.  However the site wasn't your typical e-commerce site.  Instead of a checkout they wanted a quoting system.  I chose Magento 2.x since I felt that I really needed the flexibility Magento typically offers. 
 
-While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
 
-## What the updates mean to you
 
-The Specialty Coffee Association of America (SCAA), founded in 1982, is a non-profit trade organization for the specialty coffee industry. With members located in more than 40 countries, SCAA represents every segment of the specialty coffee industry, including:
+## Extensions
 
-* producers
-* roasters
-* importers/exporters
-* retailers
-* manufacturers
-* baristas
+You would think with a platform like Magento they would have an easy way to add an extension, but no.  Download the zip file, extract the contents and move to the server, SSH to the server to run php commands to upgrade the site and deploy static content.  Although Magento does use composer to install packages, most of these third party extensions are paid for and require you to download extensions.
 
-For over 30 years, SCAA has been dedicated to creating a vibrant specialty coffee community by recognizing, developing and promoting specialty coffee. SCAA sets and maintains quality standards for the industry, conducts market research, and provides education, training, resources, and business services for its members.
+With Shopify it was extremely easy to add a quote extension.  They even had a free trial so I could integrate it into my site, test it and then pay for it.  
 
-Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue.
 
-The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.
+
+## Customization
+
+I have previously worked with Magento 1.x which seemed to be fairly flexible and easy to customize.  With Magento 2.x I found it absolutely horrible to create my own child theme.  I had followed all of their instructions to create a child theme based on their Luma theme.  When I did this, I lost all of my custom blocks that I had created.  I guess when you create a child theme you lose all of your blocks from the parent theme?  My other complaint was working with the theme style.  Their css preprocessor of choice is LESS, which is fine.  However it was troubling to test my changes.  Every time I made a change I had to delete folders to clear the cache!  Even in developer mode!  This is what made me give up on Magento unfortunately.
+
+The reason I didn't choose Shopify initially was because I assumed I wouldn't have the ability to customize the look and feel as good.  I was wrong.  I absolutely love the UI/UX of Shopify.  Shopify is a perfect example of a great architecture and a well thought out tech stack.  I am able to update liquid templates and scss directly in the browser.  
+
+
+
+## Cost
+
+While Magento Community is free, you still have to figure in your hosting and cost of extensions.  Basic Magento hosting for approximately $10-15 a month isn't too bad, however this is literally the most minimum requirement to run Magento.  I would HIGHLY recommend getting more than the minimum hosting requirements for Magento.  Aside from hosting we had to pay for all of our extensions which did not have free trials.  Most of Magento's extensions were a one time fee which seemed a little pricy.  
+
+Shopify pricing seems very reasonable.  At $29/month it's practically the price of decent hosting for Magento.  Again the pricing model of their extensions was reasonable with free trials since their SASS model is purely a hosted model.  
+
+
+
+## Conclusion
+
+I will never use Magento for a small e-commerce site unless I have to.  Magento has it's purpose if you need a large enterprise site with developers that build and maintain a specific use case.  For me this just wasn't what I needed.
