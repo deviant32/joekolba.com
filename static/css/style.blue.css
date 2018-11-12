@@ -66,11 +66,6 @@ a i {
     transition: none;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
 section {
     padding: 100px 0;
     overflow-x: hidden;
