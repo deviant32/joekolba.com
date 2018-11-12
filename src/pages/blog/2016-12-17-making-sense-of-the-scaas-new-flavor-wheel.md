@@ -1,7 +1,6 @@
 ---
 templateKey: blog-post
-image: >-
-  /img/magento-vs-shopify-which-is-the-best-platform-for-your-ecommerce-business.jpg
+image: /img/magento-vs-shopify-is-shopify-really-the-better-choice.jpg
 title: Magento vs Shopify
 category: Ecommerce
 date: 2018-11-12T15:04:10.000Z
