@@ -159,7 +159,7 @@ export default class IndexPage extends React.Component {
                       <img
                         src={post.frontmatter.image}
                         alt={post.frontmatter.title}
-                        className="img-fluid"
+                        className="img-fluid img-thumbnail"
                       />
                     </Link>
                   </div>
