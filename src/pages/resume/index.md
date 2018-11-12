@@ -1,5 +1,5 @@
 ---
 templateKey: resume-page
-title: 'Experience '
+title: Resume
 ---
 
