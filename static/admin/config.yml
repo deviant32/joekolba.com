@@ -59,12 +59,6 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Jobs"
-            name: "jobs"
-            widget: "list"
-            fields: 
-              - {label: "Job Title", name: "job_title", widget: "string"}
-              - {label: "Job Title", name: "job_description", widget: "markdown"}
             
 
       - file: "src/pages/resume/index.md"
@@ -78,7 +72,6 @@ collections:
               default: "resume-page",
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
 
       - file: "src/pages/products/index.md"
         label: "Products Page"
