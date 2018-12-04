@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-image: /img/andres-jasso-1159088-unsplash.jpg
+image: /img/damian-patkowski-449653-unsplash.jpg
 title: The inevitable death of the 5 day work week
 category: Productivity
 date: 2018-12-04T15:39:40.883Z
